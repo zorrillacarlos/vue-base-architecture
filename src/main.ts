@@ -1,12 +1,11 @@
 import './assets/main.css'
 
-import { createApp } from 'vue'
+import { createApp, defineAsyncComponent } from 'vue';
 import router from '@router/index';
 import pinia from '@shared/stores/pinia';
 
-import App from './App.vue'
-
-const app = createApp(App)
+// create lazy APP
+const app = createApp(defineAsyncComponent(() => import('@ui/App.vue')));
 
 app
   .use(pinia)
