@@ -7,7 +7,7 @@
       const parsedResponse = await response.json()
       if (!response.ok) {
         const { code, status } = parsedResponse
-        return Promise.reject({ code, status })
+        throw new Error(`${code}: ${status}`);
       };
       return parsedResponse;
     }
