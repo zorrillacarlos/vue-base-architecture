@@ -15,7 +15,11 @@
     "types": ["node"],
     "paths": {
       "@/*": ["./src/*"],
-      "@shared/*": ["./src/app/shared/*"]
+      "@ui/*": ["./src/app/ui/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@router/*": ["./src/app/router/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@domains/*": ["./src/domains/*"],
     }
   }
 }
