@@ -17,5 +17,12 @@ export default defineConfig({
       '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
       '@domains': fileURLToPath(new URL('./src/domains', import.meta.url)),
     }
-  }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import './src/assets/global.scss';`,
+      },
+    },
+  },
 })
