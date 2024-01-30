@@ -1,0 +1,12 @@
+html,
+body {
+  * {
+    &:is(button) {
+      // global button state
+    }
+
+    &:is(ul, ol, li, h1, h2, h3, h4, p, form) {
+      // global tags state
+    }
+  }
+}

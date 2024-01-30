@@ -1,5 +1,3 @@
-import './assets/main.css'
-
 import { createApp, defineAsyncComponent } from 'vue';
 import router from '@router/index';
 import pinia from '@shared/stores/pinia';
