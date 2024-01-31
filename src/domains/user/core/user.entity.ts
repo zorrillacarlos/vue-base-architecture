@@ -13,7 +13,7 @@ export class User {
     const { id, name, surname, email } = props
     return new User(id, name, surname, email)
   }
-
+ 
   get userEntity(): UserType {
     return {
       id: this.id,
