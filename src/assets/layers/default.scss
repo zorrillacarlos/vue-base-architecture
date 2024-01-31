@@ -1,12 +1,15 @@
-html,
+// create a root (html, body) properties and global tags inital state
+// example:
+/*html,
 body {
   * {
+    box-sizing: border-box;
     &:is(button) {
-      // global button state
+      cursor: pointer;
     }
 
     &:is(ul, ol, li, h1, h2, h3, h4, p, form) {
-      // global tags state
+      margin: 0;
     }
   }
-}
+}*/

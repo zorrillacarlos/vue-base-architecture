@@ -1,5 +1,6 @@
-// animations
-@mixin create-animation($name: 'slide',
+// create all mixins for animation handler
+// example:
+/*@mixin create-animation($name: 'slide',
   $init: translateY(0) translateX(0),
   $from: translateX(100%),
   $to: translateX(100%),
@@ -36,4 +37,4 @@
     opacity: 0;
     transform: $from
   }
-}
+}*/
