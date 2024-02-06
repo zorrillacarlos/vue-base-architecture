@@ -19,7 +19,7 @@
       "@shared/*": ["./src/app/shared/*"],
       "@router/*": ["./src/app/router/*"],
       "@assets/*": ["./src/assets/*"],
-      "@domains/*": ["./src/domains/*"],
+      "@modules/*": ["./src/modules/*"],
     }
   }
 }
