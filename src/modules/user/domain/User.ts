@@ -15,9 +15,9 @@ export class User {
   static create({ id, name, surname, email }: UserDefinitions): User {
     return new User(
       id,
-      new UserName(name).toString(),
-      new UserName(surname).toString(),
-      new UserEmail(email).toString(),
+      new UserName(name).value,
+      new UserName(surname).value,
+      new UserEmail(email).value,
     );
   }
 }
