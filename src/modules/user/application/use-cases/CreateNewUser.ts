@@ -1,12 +1,14 @@
+import type { User } from "../../domain/User";
 import type { IUserRepository } from "../../domain/repository/UserRepository";
-import type { UserDefinitions } from "../../domain/types";
+import type { UserData } from "../../domain/types";
 
 export class CreateNewUser {
   constructor(
     private readonly userRepository: IUserRepository
   ){}
 
-  async execute (user: UserDefinitions): Promise<void> {
-    this.userRepository.saveUser(user)
+  async execute (user: UserData): Promise<void> {
+    const userResponse = this.userRepository.saveUser(user);
+    console.log(userResponse)
   }
 }

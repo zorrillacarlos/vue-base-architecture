@@ -4,3 +4,5 @@ export type UserDefinitions = {
   surname: string;
   email: string;
 }
+
+export type UserData = Omit<UserDefinitions, 'id'>
