@@ -1,7 +1,10 @@
 import { createApp, defineAsyncComponent } from 'vue';
 import router from '@router/index';
 import pinia from '@shared/stores/pinia';
-import { User } from './modules/user/domain/User';
+
+
+// mock server
+import '@/mocks/server';
 
 // use cases
 import { UserServiceEntryPoint } from '@modules/user/application/use-cases';
@@ -27,12 +30,3 @@ app
 
 router.isReady().then(() => app.mount('#app'));
 app.provide<IUserUseCase>('useUser', useUserService);
-
-const xxx = User.create({
-  id: '12345',
-  name: 'Giuseppe',
-  surname: 'Caso',
-  email: '76.giuseppe.caso@gmail.com'
-})
-
-console.log(xxx)

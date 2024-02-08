@@ -7,8 +7,8 @@ export class CreateNewUser {
     private readonly userRepository: IUserRepository
   ){}
 
-  async execute (user: UserData): Promise<void> {
-    const userResponse = this.userRepository.saveUser(user);
-    console.log(userResponse)
+  async execute (user: UserData): Promise<User> {
+    const userResponse = await this.userRepository.saveUser(user);
+    return userResponse
   }
 }

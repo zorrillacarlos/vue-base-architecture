@@ -1,3 +1,4 @@
+import type { User } from "../../domain/User";
 import type { IUserRepository } from "../../domain/repository/UserRepository";
 import type { UserData } from "../../domain/types";
 import { CreateNewUser } from "./CreateNewUser";
@@ -11,7 +12,7 @@ export class UserServiceEntryPoint {
     this.createNewUserUseCase = new CreateNewUser(userRepository);
   }
 
-  async createUser(user: UserData): Promise<void> {
-    this.createNewUserUseCase.execute(user)
+  async createUser(user: UserData): Promise<User> {
+    return await this.createNewUserUseCase.execute(user)
   }
 }

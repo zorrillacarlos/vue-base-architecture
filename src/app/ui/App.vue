@@ -1,6 +1,20 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@ui/components/HelloWorld.vue'
+import { inject, onMounted } from 'vue'
+import type { IUserUseCase } from '@modules/user/application/interfaces/userUseCase'
+
+const useUser = inject<IUserUseCase>('useUser') as IUserUseCase
+
+onMounted(async () => {
+  console.log(
+    await useUser.createUser({
+      name: 'Giuseppe',
+      surname: 'Caso',
+      email: '76.giuseppe.caso@gmail.com'
+    })
+  )
+})
 </script>
 
 <template>
