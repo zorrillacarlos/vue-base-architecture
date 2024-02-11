@@ -29,4 +29,6 @@ app
   .use(router);
 
 router.isReady().then(() => app.mount('#app'));
+
+// use symbols instead string for provide name
 app.provide<IUserUseCase>('useUser', useUserService);

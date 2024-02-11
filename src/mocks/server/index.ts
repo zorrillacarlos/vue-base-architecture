@@ -1,6 +1,13 @@
 import { Server, Response } from 'miragejs';
 import USER from '@/mocks/server/fixtures/users';
-import { uuid } from '@/app/shared/helpers';
+
+export const uuid = () => {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    const r = (Math.random() * 16) | 0,
+      v = c == 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+};
 
 const mockServer = new Server({
   seeds(server) {
