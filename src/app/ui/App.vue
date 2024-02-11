@@ -1,35 +1,24 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@ui/components/HelloWorld.vue'
-import { inject, onMounted } from 'vue'
+import { inject, onMounted, ref } from 'vue'
 import type { IUserUseCase } from '@modules/user/application/interfaces/userUseCase'
 
 const useUser = inject<IUserUseCase>('useUser') as IUserUseCase
+const fullMessage = ref<string>('')
 
 onMounted(async () => {
-  console.log(
-    await useUser.createUser({
-      name: 'Giuseppe',
-      surname: 'Caso',
-      email: '76.giuseppe.caso@gmail.com'
-    })
-  )
+  const { name, surname, createAt } = await useUser.createUser({
+    name: 'Giuseppe',
+    surname: 'Caso',
+    email: 'giuseppe2@gmail.com',
+    createAt: new Date(Date.now())
+  })
+
+  fullMessage.value = `${name} ${surname}, ${createAt}`
 })
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="wrapper">New created user: {{ fullMessage }}</div>
 </template>
 
 <style scoped>

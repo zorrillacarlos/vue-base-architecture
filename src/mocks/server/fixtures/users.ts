@@ -1,7 +1,9 @@
 export default [{
-    id: 'STUDENT',
+    id: 'abcd',
     name: "Giuseppe",
     surname: "Caso",
-    email: "test@gmail.com",
-  }
+    email: "giuseppe@gmail.com",
+    password: "123ABC!!",
+    date: "2023-06-24T23:24:00"
+  },
 ]

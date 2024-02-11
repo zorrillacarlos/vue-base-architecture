@@ -3,7 +3,8 @@ export type UserDefinitions = {
   name: string;
   surname: string;
   email: string;
-  date: Date
+  password: string;
+  createAt: Date
 }
 
-export type UserData = Omit<UserDefinitions, 'id'>
+export type UserData = Omit<UserDefinitions, 'id' | 'password'>
