@@ -6,14 +6,15 @@ const useUser = inject<IUserUseCase>('useUser') as IUserUseCase
 const fullMessage = ref<string>('')
 
 onMounted(async () => {
-  const { name, surname, createAt } = await useUser.createUser({
+  const fullname = await useUser.createUser({
     name: 'Giuseppe',
     surname: 'Caso',
+    username: 'UserNameGiuseppe',
     email: 'giuseppe2@gmail.com',
     createAt: new Date(Date.now())
   })
 
-  fullMessage.value = `${name} ${surname}, ${createAt}`
+  fullMessage.value = `${fullname}`
 })
 </script>
 

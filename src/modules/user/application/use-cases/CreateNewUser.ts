@@ -9,10 +9,10 @@ export class CreateNewUser {
     private readonly userRepository: IUserRepository
   ){}
 
-  async execute ({name, surname, email, createAt}: UserData): Promise<UserView> {
+  async execute ({name, surname, username, email, createAt}: UserData): Promise<string> {
     await this.ensureUserNotExist(email);
-    const userResponse = await this.userRepository.saveUser({ name, surname, email, createAt });
-    return UserView.createViewFromDomain(userResponse)
+    const userResponse = await this.userRepository.saveUser({ name, surname, username, email, createAt });
+    return UserView.createViewFromDomain(userResponse).fullName
   }
 
   private async ensureUserNotExist(email: string): Promise<void> {

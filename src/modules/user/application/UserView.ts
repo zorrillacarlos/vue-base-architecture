@@ -14,8 +14,6 @@ export class UserView {
   }
 
   get fullName() {
-    return {
-      fullName: `${this.name} ${this.surname}`
-    }
+    return `${this.name} ${this.surname}, date: ${this.createAt}`
   }
 }
