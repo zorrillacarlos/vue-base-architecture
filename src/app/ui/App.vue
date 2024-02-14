@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { inject, onMounted, ref } from 'vue'
 import type { IUserUseCase } from '@modules/user/application/interfaces/userUseCase'
+import LogTest from '@/app/ui/components/LogTest.vue'
 
 const useUser = inject<IUserUseCase>('useUser') as IUserUseCase
 const fullMessage = ref<string>('')
@@ -19,7 +20,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="wrapper">New created user: {{ fullMessage }}</div>
+  <div class="wrapper">
+    <div>New created user: {{ fullMessage }}</div>
+    <LogTest />
+  </div>
 </template>
 
 <style scoped>
@@ -85,3 +89,4 @@ nav a:first-of-type {
   }
 }
 </style>
+@/app/shared/composables/useLogger
