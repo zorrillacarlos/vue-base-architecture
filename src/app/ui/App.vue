@@ -2,6 +2,7 @@
 import { inject, onMounted, ref } from 'vue'
 import type { IUserUseCase } from '@modules/user/application/interfaces/userUseCase'
 import LogTest from '@/app/ui/components/LogTest.vue'
+import CardTest from '../ui/stories-ui/CardTest.vue'
 
 const useUser = inject<IUserUseCase>('useUser') as IUserUseCase
 const fullMessage = ref<string>('')
@@ -23,6 +24,7 @@ onMounted(async () => {
   <div class="wrapper">
     <div>New created user: {{ fullMessage }}</div>
     <LogTest />
+    <CardTest title="Titulo" subtext="Hola Mundo"/>
   </div>
 </template>
 
