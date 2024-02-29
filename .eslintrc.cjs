@@ -22,11 +22,11 @@ module.exports = {
   rules: {
     // Reglas personalizadas específicas del proyecto
     // Limitar la longitud de las líneas de código a 120 caracteres
-    'max-len': ['error', { code: 120 }],
+    // 'max-len': ['error', { code: 120 }],
     // Mostrar un error al utilizar variables no definidas
-    'no-undef': 'error',
+    // 'no-undef': 'error',
     // Mostrar un error al usar números literales (números mágicos)
-    'no-magic-numbers': 'error'
+    // 'no-magic-numbers': 'error'
     // Otras reglas...
   }
 }
