@@ -5,7 +5,6 @@ import Card from './CardTest.vue'
 const meta: Meta<typeof Card> = {
   component: Card,
 };
- 
 
 export default meta;
 type Story = StoryObj<typeof Card>;
